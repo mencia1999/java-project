@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="800.0" styleClass="background" stylesheets="@../App/DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LionKing.BankApp.Mouvement.MouvementController">
+   <children>
+      <Label layoutX="34.0" layoutY="25.0" text="N° Compte :" />
+      <Label layoutX="34.0" layoutY="55.0" text="Nom :" />
+      <Label layoutX="34.0" layoutY="84.0" text="Prénom :" />
+      <Label layoutX="34.0" layoutY="108.0" text="Solde actuel :" />
+      <Label fx:id="NumComptLabel" layoutX="139.0" layoutY="25.0" styleClass="label-bright" text="Label" />
+      <Label fx:id="NomLabel" layoutX="139.0" layoutY="55.0" styleClass="label-bright" text="Label" />
+      <Label fx:id="PrenomLabel" layoutX="139.0" layoutY="84.0" styleClass="label-bright" text="Label" />
+      <Label fx:id="SoldeLabel" layoutX="139.0" layoutY="108.0" styleClass="label-bright" text="Label" />
+      <TableView fx:id="MouvementTableColumn" layoutX="53.0" layoutY="141.0" prefHeight="284.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="141.0">
+        <columns>
+          <TableColumn fx:id="NumChequeColumn" prefWidth="75.0" text="N° Cheque" />
+          <TableColumn fx:id="VersementColumn" prefWidth="75.0" text="Versement" />
+            <TableColumn fx:id="RetraitColumn" prefWidth="75.0" text="Retrait" />
+            <TableColumn fx:id="DateColumn" prefWidth="75.0" text="Date" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button layoutX="18.0" layoutY="440.0" mnemonicParsing="false" onAction="#handleRetour" text="Retour" />
+      <GridPane layoutX="497.0" layoutY="426.0" prefHeight="60.0" prefWidth="279.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Total Versement : " />
+            <Label fx:id="TotalVersementLabel" styleClass="label-bright" text="0" GridPane.columnIndex="1" />
+            <Label text="Total Retrait :" GridPane.rowIndex="1" />
+            <Label fx:id="TotalRetraitLabel" styleClass="label-bright" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <ComboBox fx:id="mensuel" layoutX="297.0" layoutY="53.0" onAction="#handleByMonth" prefWidth="150.0" />
+      <Label layoutX="297.0" layoutY="25.0" text="Bilan mensuel :" />
+      <Label layoutX="297.0" layoutY="86.0" text="Bilan annuel :" />
+      <TextField fx:id="annuel" layoutX="297.0" layoutY="111.0" prefHeight="33.0" prefWidth="82.0" />
+      <Button layoutX="387.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleByYear" prefHeight="33.0" prefWidth="82.0" text="Trier" />
+      <Label fx:id="error" layoutX="398.0" layoutY="88.0" />
+   </children>
+</AnchorPane>

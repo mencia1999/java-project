@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" onDragDetected="#handleAdmin" prefHeight="500.0" prefWidth="800.0" styleClass="background" stylesheets="@../DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LionKing.BankApp.App.View.HomeLayoutController">
+   <children>
+      <Button layoutX="232.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleClient" prefHeight="86.0" prefWidth="337.0" text="Client" />
+      <Button fx:id="btn_gerer" layoutX="702.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleAdmin" text="Gérer" />
+      <Button layoutX="232.0" layoutY="281.0" mnemonicParsing="false" onAction="#handleRetrait" prefHeight="86.0" prefWidth="337.0" text="Retrait" />
+      <Button layoutX="232.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleVersement" prefHeight="86.0" prefWidth="337.0" text="Versement" />
+   </children>
+</AnchorPane>
